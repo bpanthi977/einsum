@@ -1,4 +1,5 @@
 ;;;; package.lisp
 
 (defpackage #:einsum
-  (:use #:cl))
+  (:use #:cl)
+  (:export #:einsum))

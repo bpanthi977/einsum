@@ -114,7 +114,7 @@ returns list of (index tensor axis)"
   (declare (optimize (debug 3)))
   (let* ((*indices* (map 'list #'identity input-indices))
          (*indices-max* (mapcar (lambda (i) (gensym (concatenate 'string (string i) "-max"))) *indices*))
-         (*indices-vars* (mapcar (lambda (i) (gensym (string i))) *indices*))
+         (*indices-vars* (mapcar (lambda (char) (intern (string char))) *indices*))
 
          (dimensions (walk-for-dimensions (cons '* expr)))
          (result (if result-array result-array (gensym "result"))))
